@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+    <script type="text/javascript" src="js/angular.js"></script>
+    <script type="text/javascript" src="js/script3.js"></script>
+<meta charset="ISO-8859-1"/>
+<title>Hello Angular</title>
+</head>
+<body ng-controller="PersonController">
+    First Name: {{person.firstName}}<br/>
+    Last Name: {{person.lastName}} <br/>
+    Image: <img ng-src="{{person.imageSrc}}" title="{{person.firstName}} {{peson.lastName}}" height="200px;" width="200px;"/>
+</body>
+</html>

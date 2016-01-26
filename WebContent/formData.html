@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app="github">
+<head>
+    <script type="text/javascript" src="js/angular.js"></script>
+    <script type="text/javascript" src="js/script6.js"></script>
+<meta charset="ISO-8859-1"/>
+<title>Github</title>
+</head>
+<body ng-controller="MyController">
+    <div> {{error}} </div>
+    
+    <form name="userSearch" ng-submit="search(username)">
+    <input type="search" placeholder="Enter username" ng-model="username" required autofocus/><br/><br/>
+    <input type="submit" value="Search"/><br/><br/>
+    </form>
+    <div>
+    Name: {{user.name}}<br/>
+    <img ng-src="{{user.avatar_url}}" title="{{user.name}}"/><br/>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Stars</th>
+                <th>Language</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="repo in repos">
+                <td> {{repo.name}} </td>
+                <td> {{repo.stargazers_count | number}} </td>
+                <td> {{repo.language}} </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

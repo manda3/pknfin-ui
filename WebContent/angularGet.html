@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+    <script type="text/javascript" src="js/angular.js"></script>
+    <script type="text/javascript" src="js/script4.js"></script>
+<meta charset="ISO-8859-1"/>
+<title>Hello Angular</title>
+</head>
+<body ng-controller="MyController">
+    {{error}}<br/>
+    Name: {{user.name}}<br/>
+    Image: <img ng-src="{{user.avatar_url}}" title="{{user.name}}"/><br/>
+    Company: {{user.company}}
+</body>
+</html>

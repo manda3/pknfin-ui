@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html ng-app="githubview">
+<head>
+    <script type="text/javascript" src="js/angular.js"></script>
+    <script type="text/javascript" src="js/script5.js"></script>
+<meta charset="ISO-8859-1"/>
+<title>Hello Angular</title>
+</head>
+<body ng-controller="MyController">
+    <div> {{error}} </div>
+     Name: {{user.name}}<br/>
+    <img ng-src="{{user.avatar_url}}" title="{{user.name}}"/><br/>
+    Company: {{user.company}}<br/>
+    Location: {{user.location}}
+</body>
+</html>
