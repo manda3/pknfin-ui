@@ -8,16 +8,23 @@
 </head>
 <body ng-controller="MyController">
     <div> {{error}} </div>
-    
+    {{username}}
     <form name="userSearch" ng-submit="search(username)">
     <input type="search" placeholder="Enter username" ng-model="username" required autofocus/><br/><br/>
     <input type="submit" value="Search"/><br/><br/>
     </form>
-    <div>
+    <div ng-show="user">
     Name: {{user.name}}<br/>
     <img ng-src="{{user.avatar_url}}" title="{{user.name}}"/><br/>
+    Order:
+    <select ng-model="reposSortOder">
+        <option value="+name">Name</option>
+        <option value="-stargazers_count">Stars</option>
+        <option value="+language">Language</option>
+    </select>
     </div>
-    <table>
+    
+    <table ng-hide="!user">
         <thead>
             <tr>
                 <th>Name</th>
@@ -26,7 +33,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="repo in repos">
+            <tr ng-repeat="repo in repos | orderBy:reposSortOder">
                 <td> {{repo.name}} </td>
                 <td> {{repo.stargazers_count | number}} </td>
                 <td> {{repo.language}} </td>

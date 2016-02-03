@@ -20,6 +20,8 @@
       $scope.search = function(username){
         $http.get("https://api.github.com/users/" + username).then(onComplete,onError);    
       };
+      
+      $scope.reposSortOder = "-stargazers_count";
   };
     app.controller("MyController",["$scope","$http",MyController]);
 }());
